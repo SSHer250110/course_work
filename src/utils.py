@@ -23,3 +23,11 @@ def get_instances_class(operations: list[dict]) -> list[Operation]:
                 to=operation["to"]
             ))
     return operation_instances
+
+
+def get_executed_operations(operations: list[Operation]) -> list[Operation]:
+    executed_operations = []
+    for operation in operations:
+        if operation.state == "EXECUTED":
+            executed_operations.append(operation)
+    return executed_operations
