@@ -9,10 +9,10 @@ class Operation:
             from_: str,
             to: str
     ):
-        self.pk = pk,
-        self.date = date,
-        self.state = state,
-        self.operation_amount = operation_amount,
-        self.description = description,
-        self.from_ = from_,
+        self.pk = pk
+        self.date = date
+        self.state = state
+        self.operation_amount = operation_amount
+        self.description = description
+        self.from_ = from_
         self.to = to
