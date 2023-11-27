@@ -17,7 +17,7 @@ def get_instances_class(operations: list[dict]) -> list[Operation]:
                 pk=operation["id"],
                 state=operation["state"],
                 date=operation["date"],
-                operation_amount=operation["operation_amount"],
+                operation_amount=operation["operationAmount"],
                 description=operation["description"],
                 from_=operation["from"],
                 to=operation["to"]
