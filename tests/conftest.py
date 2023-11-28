@@ -5,6 +5,10 @@ from src.operation import Operation
 
 @pytest.fixture
 def operation_instance():
+    """
+    Данные для test_get_executed_operations
+    и test_sort_operations_by_date
+    """
     instance_op = Operation(
         pk=123421,
         state="EXECUTED",
@@ -40,6 +44,9 @@ def operation_instance():
 
 @pytest.fixture
 def operation_dict():
+    """
+    Данные для test_get_instances_class
+    """
     return [
         {
             "id": 594226727,
