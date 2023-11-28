@@ -15,7 +15,7 @@ def load_data(path: str) -> list[dict]:
 
 def get_instances_class(operations: list[dict]) -> list[Operation]:
     """
-    Получение одного экземпляра класса
+    Получение списка экземпляров класса
     """
     operation_instances = []
     for operation in operations:
