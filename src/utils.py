@@ -31,3 +31,7 @@ def get_executed_operations(operations: list[Operation]) -> list[Operation]:
         if operation.state == "EXECUTED":
             executed_operations.append(operation)
     return executed_operations
+
+
+def sort_operations_by_date(operations: list[Operation]) -> list[Operation]:
+    return sorted(operations, key=lambda operation: operation.date, reverse=True)

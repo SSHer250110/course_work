@@ -21,10 +21,10 @@ class Operation:
         self.to = self.convert_info_payment(to)
 
     def convert_date(self, date: str) -> datetime.date:
-        format_data = datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%f")
-        return format_data.strftime("%d.%m.%Y")
-        # iso_date = datetime.fromisoformat(date)
-        # return iso_date.strftime("%d.%m.%Y")
+        iso_date = datetime.fromisoformat(date)
+        format_data = datetime.strftime(iso_date, "%d.%m.%Y")
+        return datetime.strptime(format_data, "%d.%m.%Y")
+
 
     def convert_info_payment(self, info_payment: str) -> str:
         if info_payment:
