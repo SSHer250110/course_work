@@ -7,8 +7,8 @@ def main():
     instances = get_instances_class(operations)
     executed_operations = get_executed_operations(instances)
     sorted_operations = sort_operations_by_date(executed_operations)
-    print(1)
-
+    for operation in sorted_operations[:5]:
+        print(operation)
 
 if __name__ == '__main__':
     main()

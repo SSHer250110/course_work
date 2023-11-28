@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 from src.operation import Operation
 
@@ -34,4 +35,4 @@ def get_executed_operations(operations: list[Operation]) -> list[Operation]:
 
 
 def sort_operations_by_date(operations: list[Operation]) -> list[Operation]:
-    return sorted(operations, key=lambda operation: operation.date, reverse=True)
+    return sorted(operations, key=lambda k: '.'.join(reversed(k.date.split('.'))), reverse=True)

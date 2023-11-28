@@ -22,9 +22,7 @@ class Operation:
 
     def convert_date(self, date: str) -> datetime.date:
         iso_date = datetime.fromisoformat(date)
-        format_data = datetime.strftime(iso_date, "%d.%m.%Y")
-        return datetime.strptime(format_data, "%d.%m.%Y")
-
+        return iso_date.strftime("%d.%m.%Y")
 
     def convert_info_payment(self, info_payment: str) -> str:
         if info_payment:
@@ -38,4 +36,9 @@ class Operation:
                 num_payment = f"{num_payment[:4]} {num_payment[5:7]}** **** {num_payment[-4:]}"
                 info_list.append(num_payment)
             return " ".join(info_list)
-        return ""
+        return "Данные отправителя отсутствуют"
+
+    def __str__(self):
+        return (f"{self.date} {self.description}\n"
+                f"{self.from_} -> {self.to}\n"
+                f"{self.operation_amount["amount"]} {self.operation_amount["currency"]["name"]}\n")
