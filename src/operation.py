@@ -23,7 +23,7 @@ class Operation:
         self.from_ = self.convert_info_payment(from_)
         self.to = self.convert_info_payment(to)
 
-    def convert_date(self, date: str) -> datetime.date:
+    def convert_date(self, date: str):
         """
         Метод преобразования даты в нужный вид
         """
@@ -42,7 +42,7 @@ class Operation:
                 info_list.append(num_payment)
             else:
                 num_payment = info_list.pop()
-                num_payment = f"{num_payment[:4]} {num_payment[5:7]}** **** {num_payment[-4:]}"
+                num_payment = f"{num_payment[:4]} {num_payment[4:6]}** **** {num_payment[-4:]}"
                 info_list.append(num_payment)
             return " ".join(info_list)
         return "Данные отправителя отсутствуют"
