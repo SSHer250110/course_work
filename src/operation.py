@@ -22,7 +22,7 @@ class Operation:
 
     def convert_date(self, date: str) -> datetime.date:
         iso_date = datetime.fromisoformat(date)
-        return iso_date.strftime("%d.%m.%Y")
+        return datetime.strftime(iso_date, "%d.%m.%Y")
 
     def convert_info_payment(self, info_payment: str) -> str:
         if info_payment:
