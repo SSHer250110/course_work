@@ -34,7 +34,7 @@ def get_instances_class(operations: list[dict]) -> list[Operation]:
 
 def get_executed_operations(operations: list[Operation]) -> list[Operation]:
     """
-    Функция получения списка выполненных операций
+    Функция получения списка экземпляров выполненных операций
     """
     executed_operations = []
     for operation in operations:
@@ -45,6 +45,6 @@ def get_executed_operations(operations: list[Operation]) -> list[Operation]:
 
 def sort_operations_by_date(operations: list[Operation]) -> list[Operation]:
     """
-    Функция сортировки выполненных операций с последней выполненной операции
+    Функция сортировки выполненных операций, начинающихся с последней выполненной операции
     """
     return sorted(operations, key=lambda operation: datetime.strptime(operation.date, "%d.%m.%Y"), reverse=True)
