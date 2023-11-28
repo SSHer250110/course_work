@@ -5,6 +5,9 @@ from src.utils import get_instances_class, get_executed_operations, sort_operati
 
 
 def test_get_instances_class(operation_dict):
+    """
+    Тест для проверки функции получения одного экземпляра
+    """
     operations = get_instances_class(operation_dict)
     assert isinstance(operations, list)
     assert isinstance(operations[0], Operation)
@@ -14,6 +17,9 @@ def test_get_instances_class(operation_dict):
 
 
 def test_get_executed_operations(operation_instance):
+    """
+    Тест для проверки функции получения списка экземпляров с выполненными операциями
+    """
     executed_operation = get_executed_operations(operation_instance)
     assert len(executed_operation) == 1
     assert isinstance(executed_operation, list)
@@ -23,6 +29,9 @@ def test_get_executed_operations(operation_instance):
 
 
 def test_sort_operations_by_date(operation_instance):
+    """
+    Тест для проверки функции сортировки выполненных операций, начинающихся с последней выполненной операции
+    """
     sort_date = sort_operations_by_date(operation_instance)
     assert len(sort_date) == 2
     assert isinstance(sort_date, list)
