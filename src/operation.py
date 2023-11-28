@@ -2,6 +2,9 @@ from datetime import datetime
 
 
 class Operation:
+    """
+    Класс одной операции
+    """
     def __init__(
             self,
             pk: int,
@@ -21,10 +24,16 @@ class Operation:
         self.to = self.convert_info_payment(to)
 
     def convert_date(self, date: str) -> datetime.date:
+        """
+        Метод преобразования даты в нужный вид
+        """
         iso_date = datetime.fromisoformat(date)
         return datetime.strftime(iso_date, "%d.%m.%Y")
 
     def convert_info_payment(self, info_payment: str) -> str:
+        """
+        Метод вывода информации о платеже в нужном виде
+        """
         if info_payment:
             info_list = info_payment.split()
             if info_payment.startswith("Счет"):
@@ -39,6 +48,12 @@ class Operation:
         return "Данные отправителя отсутствуют"
 
     def __str__(self):
+        """
+        Метод вывода информации о платежах:
+        <дата перевода> <описание перевода>
+        <откуда> -> <куда>
+        <сумма перевода> <валюта>
+        """
         return (f"{self.date} {self.description}\n"
                 f"{self.from_} -> {self.to}\n"
                 f"{self.operation_amount["amount"]} {self.operation_amount["currency"]["name"]}\n")

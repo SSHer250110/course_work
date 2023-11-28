@@ -3,6 +3,9 @@ from src.utils import load_data, get_instances_class, get_executed_operations, s
 
 
 def main():
+    """
+    Основная функция программы
+    """
     operations = load_data(OPERATIONS_PATH)
     instances = get_instances_class(operations)
     executed_operations = get_executed_operations(instances)
